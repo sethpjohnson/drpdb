@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Flavor } from '@/types/flavor'
-import AuthenticityBadge from './AuthenticityBadge'
+import SugarFreeBadge from './SugarFreeBadge'
 import RarityDisplay from './RarityDisplay'
 import { motion } from 'framer-motion'
 
@@ -50,7 +50,7 @@ export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
               {flavor.name}
             </h3>
             <div className="flex items-center gap-2 flex-wrap">
-              <AuthenticityBadge level={flavor.authenticity} size="sm" />
+              <SugarFreeBadge isSugarFree={flavor.sugar_free} size="sm" />
               <span className="text-xs text-pepper-dark px-2 py-0.5 bg-white/50 rounded border">
                 {flavor.category}
               </span>

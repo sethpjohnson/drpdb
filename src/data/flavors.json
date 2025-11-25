@@ -5,7 +5,7 @@
     {
       "id": "dr-pepper-original",
       "name": "Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 1,
       "releaseYear": 1885,
@@ -19,7 +19,7 @@
     {
       "id": "diet-dr-pepper",
       "name": "Diet Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 1,
       "releaseYear": 1962,
@@ -33,7 +33,7 @@
     {
       "id": "dr-pepper-zero-sugar",
       "name": "Dr Pepper Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 1,
       "releaseYear": 2021,
@@ -47,7 +47,7 @@
     {
       "id": "caffeine-free-dr-pepper",
       "name": "Caffeine Free Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 1982,
@@ -61,7 +61,7 @@
     {
       "id": "caffeine-free-diet-dr-pepper",
       "name": "Caffeine Free Diet Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 1982,
@@ -75,7 +75,7 @@
     {
       "id": "dr-pepper-cherry",
       "name": "Dr Pepper Cherry",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2009,
@@ -89,7 +89,7 @@
     {
       "id": "dr-pepper-cherry-zero-sugar",
       "name": "Dr Pepper Cherry Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2021,
@@ -103,7 +103,7 @@
     {
       "id": "dr-pepper-cream-soda",
       "name": "Dr Pepper & Cream Soda",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2020,
@@ -117,7 +117,7 @@
     {
       "id": "dr-pepper-cream-soda-zero-sugar",
       "name": "Dr Pepper & Cream Soda Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2021,
@@ -131,7 +131,7 @@
     {
       "id": "cherry-vanilla-dr-pepper",
       "name": "Cherry Vanilla Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2004,
@@ -145,7 +145,7 @@
     {
       "id": "diet-cherry-vanilla-dr-pepper",
       "name": "Diet Cherry Vanilla Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2004,
@@ -159,7 +159,7 @@
     {
       "id": "dr-pepper-made-with-real-sugar",
       "name": "Dr Pepper Made with Real Sugar",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 3,
       "releaseYear": 2010,
@@ -173,7 +173,7 @@
     {
       "id": "dr-pepper-strawberries-and-cream",
       "name": "Dr Pepper Strawberries & Cream",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2023,
@@ -187,7 +187,7 @@
     {
       "id": "dr-pepper-strawberries-and-cream-zero-sugar",
       "name": "Dr Pepper Strawberries & Cream Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 2,
       "releaseYear": 2023,
@@ -201,7 +201,7 @@
     {
       "id": "dr-pepper-blackberry",
       "name": "Dr Pepper Blackberry",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 1,
       "releaseYear": 2025,
@@ -215,7 +215,7 @@
     {
       "id": "dr-pepper-blackberry-zero-sugar",
       "name": "Dr Pepper Blackberry Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 1,
       "releaseYear": 2025,
@@ -229,7 +229,7 @@
     {
       "id": "pepper-free",
       "name": "Pepper Free",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 6,
       "releaseYear": 1982,
@@ -244,7 +244,7 @@
     {
       "id": "dietetic-dr-pepper",
       "name": "Dietetic Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 7,
       "releaseYear": 1962,
@@ -259,7 +259,7 @@
     {
       "id": "sugar-free-dr-pepper",
       "name": "Sugar-Free Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Classic",
       "rarityScore": 6,
       "releaseYear": 1962,
@@ -274,7 +274,7 @@
     {
       "id": "dublin-dr-pepper",
       "name": "Dublin Dr Pepper",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 8,
       "releaseYear": 1891,
@@ -290,7 +290,7 @@
     {
       "id": "dr-pepper-energy",
       "name": "Dr Pepper Energy",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Experimental",
       "rarityScore": 4,
       "releaseYear": 2013,
@@ -305,7 +305,7 @@
     {
       "id": "dr-pepper-ten",
       "name": "Dr Pepper Ten",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Classic",
       "rarityScore": 6,
       "releaseYear": 2011,
@@ -320,7 +320,7 @@
     {
       "id": "dr-pepper-red-fusion",
       "name": "Dr Pepper Red Fusion",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Seasonal",
       "rarityScore": 7,
       "releaseYear": 2002,
@@ -335,7 +335,7 @@
     {
       "id": "dr-pepper-berries-and-cream",
       "name": "Dr Pepper Berries & Cream",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Seasonal",
       "rarityScore": 6,
       "releaseYear": 2006,
@@ -350,7 +350,7 @@
     {
       "id": "diet-dr-pepper-berries-and-cream",
       "name": "Diet Dr Pepper Berries & Cream",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Seasonal",
       "rarityScore": 6,
       "releaseYear": 2006,
@@ -365,7 +365,7 @@
     {
       "id": "dr-pepper-dark-berry",
       "name": "Dr Pepper Dark Berry",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Seasonal",
       "rarityScore": 5,
       "releaseYear": 2019,
@@ -379,7 +379,7 @@
     {
       "id": "dr-pepper-dark-berry-zero-sugar",
       "name": "Dr Pepper Dark Berry Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Seasonal",
       "rarityScore": 5,
       "releaseYear": 2022,
@@ -393,7 +393,7 @@
     {
       "id": "dr-pepper-vanilla-float",
       "name": "Dr Pepper Vanilla Float",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Seasonal",
       "rarityScore": 4,
       "releaseYear": 2014,
@@ -407,7 +407,7 @@
     {
       "id": "dr-pepper-creamy-coconut",
       "name": "Dr Pepper Creamy Coconut",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Seasonal",
       "rarityScore": 4,
       "releaseYear": 2023,
@@ -421,7 +421,7 @@
     {
       "id": "dr-pepper-creamy-coconut-zero-sugar",
       "name": "Dr Pepper Creamy Coconut Zero Sugar",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Seasonal",
       "rarityScore": 4,
       "releaseYear": 2023,
@@ -435,7 +435,7 @@
     {
       "id": "dr-pepper-fansville-reserve-bourbon",
       "name": "Dr Pepper Fansville Reserve Bourbon",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Experimental",
       "rarityScore": 7,
       "releaseYear": 2022,
@@ -450,7 +450,7 @@
     {
       "id": "diet-dr-pepper-cherry-chocolate",
       "name": "Diet Dr Pepper Cherry Chocolate",
-      "authenticity": "Real",
+      "sugar_free": true,
       "category": "Seasonal",
       "rarityScore": 7,
       "releaseYear": 2007,
@@ -465,7 +465,7 @@
     {
       "id": "dr-pepper-fantastic-chocolate",
       "name": "Dr Pepper Fantastic Chocolate",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Experimental",
       "rarityScore": 8,
       "releaseYear": 2021,
@@ -480,7 +480,7 @@
     {
       "id": "dr-pepper-hot-take",
       "name": "Dr Pepper Hot Take",
-      "authenticity": "Real",
+      "sugar_free": false,
       "category": "Experimental",
       "rarityScore": 8,
       "releaseYear": 2023,

@@ -35,11 +35,11 @@ export function getRelatedFlavors(flavor: Flavor, count: number = 4): Flavor[] {
     return sameCategoryFlavors.slice(0, count)
   }
 
-  // Otherwise, mix with flavors from the same authenticity level
-  const sameAuthFlavors = allFlavors.filter(
-    (f) => f.id !== flavor.id && f.authenticity === flavor.authenticity
+  // Otherwise, mix with flavors with the same sugar_free status
+  const sameSugarFreeFlavors = allFlavors.filter(
+    (f) => f.id !== flavor.id && f.sugar_free === flavor.sugar_free
   )
 
-  const combined = [...new Set([...sameCategoryFlavors, ...sameAuthFlavors])]
+  const combined = [...new Set([...sameCategoryFlavors, ...sameSugarFreeFlavors])]
   return combined.slice(0, count)
 }

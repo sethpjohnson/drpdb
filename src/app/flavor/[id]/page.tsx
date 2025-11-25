@@ -1,5 +1,5 @@
 import { getAllFlavors, getFlavorById, getRelatedFlavors } from '@/lib/flavors'
-import AuthenticityBadge from '@/components/flavor/AuthenticityBadge'
+import SugarFreeBadge from '@/components/flavor/SugarFreeBadge'
 import RarityDisplay from '@/components/flavor/RarityDisplay'
 import FlavorCard from '@/components/flavor/FlavorCard'
 import Link from 'next/link'
@@ -86,7 +86,7 @@ export default async function FlavorDetailPage({ params }: PageProps) {
                 {flavor.name}
               </h1>
               <div className="flex items-center gap-3 flex-wrap">
-                <AuthenticityBadge level={flavor.authenticity} />
+                <SugarFreeBadge isSugarFree={flavor.sugar_free} />
                 <span className="px-3 py-1 bg-pepper-fizz text-pepper-dark rounded-full text-sm font-medium border-2 border-pepper-burgundy/30">
                   {flavor.category}
                 </span>
@@ -166,7 +166,7 @@ export default async function FlavorDetailPage({ params }: PageProps) {
                 &ldquo;{flavor.lore}&rdquo;
               </p>
               <p className="text-xs text-pepper-dark/60 mt-4">
-                — The Pepper Keepers Archives, Classification: {flavor.authenticity}
+                — The Pepper Keepers Archives
               </p>
             </div>
 

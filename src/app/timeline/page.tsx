@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { getAllFlavors } from '@/lib/flavors'
-import AuthenticityBadge from '@/components/flavor/AuthenticityBadge'
+import SugarFreeBadge from '@/components/flavor/SugarFreeBadge'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
@@ -120,7 +120,7 @@ export default function TimelinePage() {
                             </div>
 
                             <div className="flex items-center gap-2 flex-wrap mb-3">
-                              <AuthenticityBadge level={flavor.authenticity} size="sm" />
+                              <SugarFreeBadge isSugarFree={flavor.sugar_free} size="sm" />
                               <span className="text-xs px-2 py-1 bg-pepper-fizz rounded-full border border-pepper-burgundy/30">
                                 {flavor.category}
                               </span>

@@ -1,9 +1,3 @@
-export type AuthenticityLevel =
-  | 'Real'
-  | 'Rumored'
-  | 'Urban Legend'
-  | 'Astral Projection'
-
 export type FlavorCategory =
   | 'Classic'
   | 'Seasonal'
@@ -15,7 +9,7 @@ export type RarityScore = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 export interface Flavor {
   id: string
   name: string
-  authenticity: AuthenticityLevel
+  sugar_free: boolean
   category: FlavorCategory
   rarityScore: RarityScore
   releaseYear: number | string
@@ -42,7 +36,6 @@ export interface FlavorDatabase {
 
 export interface FilterState {
   search: string
-  authenticity: AuthenticityLevel[]
   category: FlavorCategory[]
   rarityMin: RarityScore
   rarityMax: RarityScore

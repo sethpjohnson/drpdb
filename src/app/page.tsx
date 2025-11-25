@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react'
 import { getAllFlavors, getRandomFlavor } from '@/lib/flavors'
 import FlavorCard from '@/components/flavor/FlavorCard'
-import { Flavor, AuthenticityLevel, FlavorCategory } from '@/types/flavor'
+import { Flavor, FlavorCategory } from '@/types/flavor'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
   const allFlavors = getAllFlavors()
 
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedAuthenticity, setSelectedAuthenticity] = useState<AuthenticityLevel[]>([])
+  const [selectedStatus, setSelectedStatus] = useState<('current' | 'discontinued')[]>([])
   const [selectedCategories, setSelectedCategories] = useState<FlavorCategory[]>([])
   const [showFilters, setShowFilters] = useState(false)
 
@@ -28,13 +28,11 @@ export default function Home() {
         if (!matchesSearch) return false
       }
 
-      // Status filter (reusing authenticity state for discontinued filter)
-      if (selectedAuthenticity.length > 0) {
-        // 'Real' = Currently Available (not discontinued)
-        // 'Rumored' = Discontinued
+      // Status filter
+      if (selectedStatus.length > 0) {
         const isDiscontinued = flavor.discontinued === true
-        const showCurrent = selectedAuthenticity.includes('Real')
-        const showDiscontinued = selectedAuthenticity.includes('Rumored')
+        const showCurrent = selectedStatus.includes('current')
+        const showDiscontinued = selectedStatus.includes('discontinued')
 
         // Show flavor if it matches ANY selected status (OR logic)
         const matchesStatus =
@@ -51,16 +49,16 @@ export default function Home() {
 
       return true
     })
-  }, [allFlavors, searchQuery, selectedAuthenticity, selectedCategories])
+  }, [allFlavors, searchQuery, selectedStatus, selectedCategories])
 
   const handleSurpriseMe = () => {
     const randomFlavor = getRandomFlavor()
     router.push(`/flavor/${randomFlavor.id}`)
   }
 
-  const toggleAuthenticity = (auth: AuthenticityLevel) => {
-    setSelectedAuthenticity((prev) =>
-      prev.includes(auth) ? prev.filter((a) => a !== auth) : [...prev, auth]
+  const toggleStatus = (status: 'current' | 'discontinued') => {
+    setSelectedStatus((prev) =>
+      prev.includes(status) ? prev.filter((s) => s !== status) : [...prev, status]
     )
   }
 
@@ -72,12 +70,12 @@ export default function Home() {
 
   const clearFilters = () => {
     setSearchQuery('')
-    setSelectedAuthenticity([])
+    setSelectedStatus([])
     setSelectedCategories([])
   }
 
   const hasActiveFilters =
-    searchQuery || selectedAuthenticity.length > 0 || selectedCategories.length > 0
+    searchQuery || selectedStatus.length > 0 || selectedCategories.length > 0
 
   return (
     <div className="min-h-screen">
@@ -114,7 +112,7 @@ export default function Home() {
                 className="lg:hidden w-full mb-4 px-4 py-2 bg-pepper-burgundy text-pepper-cream rounded-lg font-medium"
               >
                 {showFilters ? 'Hide Filters' : 'Show Filters'}{' '}
-                {hasActiveFilters && `(${selectedAuthenticity.length + selectedCategories.length})`}
+                {hasActiveFilters && `(${selectedStatus.length + selectedCategories.length})`}
               </button>
 
               <div className={`${showFilters ? 'block' : 'hidden'} lg:block space-y-6`}>
@@ -167,8 +165,8 @@ export default function Home() {
                       <div className="flex items-center">
                         <input
                           type="checkbox"
-                          checked={selectedAuthenticity.includes('Real')}
-                          onChange={() => toggleAuthenticity('Real')}
+                          checked={selectedStatus.includes('current')}
+                          onChange={() => toggleStatus('current')}
                           className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
                         />
                         <span className="ml-2 text-sm group-hover:text-pepper-burgundy transition-colors">Currently Available</span>
@@ -181,8 +179,8 @@ export default function Home() {
                       <div className="flex items-center">
                         <input
                           type="checkbox"
-                          checked={selectedAuthenticity.includes('Rumored')}
-                          onChange={() => toggleAuthenticity('Rumored')}
+                          checked={selectedStatus.includes('discontinued')}
+                          onChange={() => toggleStatus('discontinued')}
                           className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
                         />
                         <span className="ml-2 text-sm group-hover:text-pepper-burgundy transition-colors">Discontinued</span>

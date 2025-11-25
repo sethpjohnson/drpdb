@@ -338,7 +338,7 @@ export default function PepperversePage() {
                 <span className="font-medium">Category:</span> {hoveredFlavor.category}
               </p>
               <p className="text-sm mb-1">
-                <span className="font-medium">Authenticity:</span> {hoveredFlavor.authenticity}
+                <span className="font-medium">Sugar Free:</span> {hoveredFlavor.sugar_free ? 'Yes' : 'No'}
               </p>
               <p className="text-sm italic">&ldquo;{hoveredFlavor.lore.slice(0, 100)}...&rdquo;</p>
               <p className="text-xs mt-2 text-pepper-burgundy">Click to view details →</p>
