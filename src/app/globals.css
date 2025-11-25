@@ -32,3 +32,20 @@
     border-width: 2px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  a:focus,
+  button:focus,
+  input:focus,
+  [role='button']:focus {
+    @apply ring-2 ring-pepper-burgundy ring-offset-2 outline-none;
+  }
+}

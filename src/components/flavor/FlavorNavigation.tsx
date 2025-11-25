@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Flavor } from '@/types/flavor'
+import { getRandomFlavor } from '@/lib/flavors'
 
 interface FlavorNavigationProps {
   prevFlavor: Flavor
@@ -13,9 +14,8 @@ export default function FlavorNavigation({ prevFlavor, nextFlavor }: FlavorNavig
   const router = useRouter()
 
   const handleRandomFlavor = () => {
-    // For static export, we'll just navigate to a random flavor from the list
-    // In a real implementation, you'd want to get random from the full list
-    router.push(`/flavor/${Math.random() > 0.5 ? prevFlavor.id : nextFlavor.id}`)
+    const randomFlavor = getRandomFlavor()
+    router.push(`/flavor/${randomFlavor.id}`)
   }
 
   return (

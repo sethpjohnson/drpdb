@@ -34,7 +34,11 @@ export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
           }`}
         >
           {/* Image placeholder */}
-          <div className="aspect-[3/4] bg-pepper-fizz rounded-md mb-4 flex items-center justify-center border-2 border-dashed border-pepper-burgundy/30">
+          <div
+            className="aspect-[3/4] bg-pepper-fizz rounded-md mb-4 flex items-center justify-center border-2 border-dashed border-pepper-burgundy/30"
+            role="img"
+            aria-label={`${flavor.name} bottle illustration`}
+          >
             <div className="w-16 h-16 bg-pepper-burgundy rounded-full flex items-center justify-center">
               <span className="text-pepper-cream font-bold text-2xl">Dr</span>
             </div>

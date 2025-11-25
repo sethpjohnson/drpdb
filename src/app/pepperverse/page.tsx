@@ -135,7 +135,11 @@ export default function PepperversePage() {
               if (!flavor.pepperversePosition) return null
               return (
                 <g key={flavor.id}>
-                  <Link href={`/flavor/${flavor.id}`}>
+                  <Link
+                    href={`/flavor/${flavor.id}`}
+                    tabIndex={0}
+                    aria-label={`${flavor.name}: Classic orbital flavor`}
+                  >
                     <motion.circle
                       cx={flavor.pepperversePosition.x}
                       cy={flavor.pepperversePosition.y}
@@ -169,7 +173,11 @@ export default function PepperversePage() {
               if (!flavor.pepperversePosition) return null
               return (
                 <g key={flavor.id}>
-                  <Link href={`/flavor/${flavor.id}`}>
+                  <Link
+                    href={`/flavor/${flavor.id}`}
+                    tabIndex={0}
+                    aria-label={`${flavor.name}: Limited edition comet`}
+                  >
                     <motion.circle
                       cx={flavor.pepperversePosition.x}
                       cy={flavor.pepperversePosition.y}
@@ -206,7 +214,11 @@ export default function PepperversePage() {
               if (!flavor.pepperversePosition) return null
               return (
                 <g key={flavor.id}>
-                  <Link href={`/flavor/${flavor.id}`}>
+                  <Link
+                    href={`/flavor/${flavor.id}`}
+                    tabIndex={0}
+                    aria-label={`${flavor.name}: Astral projection flavor`}
+                  >
                     <motion.circle
                       cx={flavor.pepperversePosition.x}
                       cy={flavor.pepperversePosition.y}
@@ -264,7 +276,11 @@ export default function PepperversePage() {
               if (!flavor.pepperversePosition) return null
               return (
                 <g key={flavor.id}>
-                  <Link href={`/flavor/${flavor.id}`}>
+                  <Link
+                    href={`/flavor/${flavor.id}`}
+                    tabIndex={0}
+                    aria-label={`${flavor.name}: Discontinued flavor`}
+                  >
                     <motion.circle
                       cx={flavor.pepperversePosition.x}
                       cy={flavor.pepperversePosition.y}
