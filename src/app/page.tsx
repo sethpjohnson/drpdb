@@ -28,9 +28,20 @@ export default function Home() {
         if (!matchesSearch) return false
       }
 
-      // Authenticity filter
+      // Status filter (reusing authenticity state for discontinued filter)
       if (selectedAuthenticity.length > 0) {
-        if (!selectedAuthenticity.includes(flavor.authenticity)) return false
+        // 'Real' = Currently Available (not discontinued)
+        // 'Rumored' = Discontinued
+        const isDiscontinued = flavor.discontinued === true
+        const showCurrent = selectedAuthenticity.includes('Real')
+        const showDiscontinued = selectedAuthenticity.includes('Rumored')
+
+        // Show flavor if it matches ANY selected status (OR logic)
+        const matchesStatus =
+          (showCurrent && !isDiscontinued) ||
+          (showDiscontinued && isDiscontinued)
+
+        if (!matchesStatus) return false
       }
 
       // Category filter
@@ -74,12 +85,12 @@ export default function Home() {
       <section className="bg-pepper-burgundy text-pepper-cream py-12 paper-texture">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            The Comprehensive Dr Pepper Flavor Archive
+            The Dr Pepper Database
           </h1>
           <p className="text-xl mb-2 opacity-90">
-            Cataloguing 23+ dimensions of carbonated joy
+            Cataloguing 34 real flavors with meticulous attention
           </p>
-          <p className="text-lg opacity-75">since an arbitrarily chosen date</p>
+          <p className="text-lg opacity-75">Established 1885 • Archived 2025</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={handleSurpriseMe}
@@ -122,43 +133,64 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Authenticity Filter */}
+                {/* Category Filter */}
                 <div>
-                  <h3 className="font-medium text-pepper-burgundy mb-2">Authenticity</h3>
+                  <h3 className="font-medium text-pepper-burgundy mb-3">Category</h3>
                   <div className="space-y-2">
-                    {(['Real', 'Rumored', 'Urban Legend', 'Astral Projection'] as AuthenticityLevel[]).map(
-                      (auth) => (
-                        <label key={auth} className="flex items-center cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={selectedAuthenticity.includes(auth)}
-                            onChange={() => toggleAuthenticity(auth)}
-                            className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
-                          />
-                          <span className="ml-2 text-sm">{auth}</span>
-                        </label>
-                      )
+                    {(['Classic', 'Seasonal', 'Experimental'] as FlavorCategory[]).map(
+                      (cat) => {
+                        const count = allFlavors.filter(f => f.category === cat).length
+                        return (
+                          <label key={cat} className="flex items-center justify-between cursor-pointer group">
+                            <div className="flex items-center">
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(cat)}
+                                onChange={() => toggleCategory(cat)}
+                                className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
+                              />
+                              <span className="ml-2 text-sm group-hover:text-pepper-burgundy transition-colors">{cat}</span>
+                            </div>
+                            <span className="text-xs text-pepper-burgundy/60 font-medium">({count})</span>
+                          </label>
+                        )
+                      }
                     )}
                   </div>
                 </div>
 
-                {/* Category Filter */}
+                {/* Status Filter */}
                 <div>
-                  <h3 className="font-medium text-pepper-burgundy mb-2">Category</h3>
+                  <h3 className="font-medium text-pepper-burgundy mb-3">Status</h3>
                   <div className="space-y-2">
-                    {(['Classic', 'Seasonal', 'Experimental', 'Forbidden'] as FlavorCategory[]).map(
-                      (cat) => (
-                        <label key={cat} className="flex items-center cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={selectedCategories.includes(cat)}
-                            onChange={() => toggleCategory(cat)}
-                            className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
-                          />
-                          <span className="ml-2 text-sm">{cat}</span>
-                        </label>
-                      )
-                    )}
+                    <label className="flex items-center justify-between cursor-pointer group">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          checked={selectedAuthenticity.includes('Real')}
+                          onChange={() => toggleAuthenticity('Real')}
+                          className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
+                        />
+                        <span className="ml-2 text-sm group-hover:text-pepper-burgundy transition-colors">Currently Available</span>
+                      </div>
+                      <span className="text-xs text-pepper-burgundy/60 font-medium">
+                        ({allFlavors.filter(f => !f.discontinued).length})
+                      </span>
+                    </label>
+                    <label className="flex items-center justify-between cursor-pointer group">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          checked={selectedAuthenticity.includes('Rumored')}
+                          onChange={() => toggleAuthenticity('Rumored')}
+                          className="w-4 h-4 text-pepper-burgundy border-pepper-burgundy/30 rounded focus:ring-pepper-burgundy"
+                        />
+                        <span className="ml-2 text-sm group-hover:text-pepper-burgundy transition-colors">Discontinued</span>
+                      </div>
+                      <span className="text-xs text-pepper-burgundy/60 font-medium">
+                        ({allFlavors.filter(f => f.discontinued).length})
+                      </span>
+                    </label>
                   </div>
                 </div>
 
