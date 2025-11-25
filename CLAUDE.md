@@ -67,10 +67,10 @@ Each flavor entry includes:
 - One-sentence lore description (written as if discovered in an unreliable archive)
 - Optional image or illustration
 
-**Initial Content Requirements**:
-- At least 23 flavors minimum (tribute to the 23 ingredients)
-- 5 real flavors, 18 fabricated ones
-- Required fabricated examples: Dr Pepper Midnight Fog, Dr Pepper Quantum Reserve, Dr Pepper Chili Dog (real but treated as mythic), Dr Pepper Decaf+
+**Content**:
+- 34 real Dr Pepper flavors with accurate historical information
+- All flavors are real products with researched data and factual (but witty) lore
+- Maintains the tongue-in-cheek, archival commentary tone while being factually accurate
 
 ### Key Features
 

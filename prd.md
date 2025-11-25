@@ -126,18 +126,11 @@ MUST USE:
 
 ## **6. Content Requirements**
 
-### **6.1 Initial Flavor List**
+### **6.1 Flavor Database**
 
-* At least 23 flavors, in tribute to the supposed ingredient count
-
-  * 5 real flavors
-  * 18 completely fabricated ones
-* Required fabricated examples:
-
-  * Dr Pepper Midnight Fog
-  * Dr Pepper Quantum Reserve
-  * Dr Pepper Chili Dog (this is real and must be treated as mythic)
-  * Dr Pepper Decaf+
+* **34 real Dr Pepper flavors** with accurate historical information
+* All flavors are factual products with researched data sourced from official releases, limited editions, regional variants, and discontinued products
+* Maintains factual accuracy while applying tongue-in-cheek, archival commentary
 
 ### **6.2 Lore Requirements**
 
@@ -145,12 +138,17 @@ Each flavor gets:
 
 * Exactly one lore sentence
 * Lore must be written as if discovered in an unreliable archive
+* Present real products with humorous scholarly tone
 * Lore may reference:
 
-  * Bootleg bottlers
-  * Lost fountain formulas
-  * Dimensional drift
-  * “The Pepper Keepers”
+  * Product release history
+  * Regional availability
+  * Discontinuation status
+  * "The Pepper Keepers" (archival organization)
+
+### **Implementation Note**
+
+The final website uses **34 real Dr Pepper flavors** with researched historical data. The tone remains humorous and archival, but all flavor data is factually accurate, not fabricated. The humor comes from the excessively formal presentation of simple consumer products, not from inventing fake products.
 
 ## **7. Future Enhancements (Optional)**
 

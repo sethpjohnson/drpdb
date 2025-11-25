@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-The Dr Pepper Database (drpprdb.com) is a delightfully over-engineered fan page that catalogues every real, rumored, and completely fabricated Dr Pepper flavor with deadpan seriousness. The UX embraces the tongue-in-cheek nature of the project while maintaining high usability standards and a vintage soda-fountain aesthetic.
+The Dr Pepper Database (drpprdb.com) is a delightfully over-engineered archive that catalogs 34 real Dr Pepper flavors with deadpan seriousness and tongue-in-cheek commentary. The UX embraces the inherent humor in meticulously documenting soda flavors while maintaining high usability standards and a vintage soda-fountain aesthetic.
 
 ### 1.1 Design Principles
 
@@ -136,8 +136,8 @@ Displayed on initial page load, dismissible, uses localStorage to remember.
 │                                                    │
 │     THE COMPREHENSIVE DR PEPPER FLAVOR ARCHIVE     │
 │                                                    │
-│   Cataloguing 23+ dimensions of carbonated joy    │
-│        since an arbitrarily chosen date            │
+│   Cataloguing 34 real flavors with meticulous     │
+│   attention to products worthy of observation      │
 │                                                    │
 │              Sips Remaining: ∞ - 1                 │
 │                                                    │
@@ -1806,8 +1806,9 @@ small: clamp(0.875rem, 2vw, 1rem)
 
 **Flavor Descriptions**:
 - One sentence lore (max 2)
-- Include specific details (years, places, people)
-- Reference "The Pepper Keepers", "dimensional drift", etc.
+- Focus on real product facts and release history
+- Apply archival tone to real products (e.g., "This limited edition was available briefly in 2019, before vanishing into the void of discontinued beverages")
+- Maintain scholarly tone while acknowledging the absurdity of the cataloging project
 - Avoid modern slang
 
 **Metadata Labels**:
@@ -1827,17 +1828,17 @@ small: clamp(0.875rem, 2vw, 1rem)
 
 ### 9.3 Flavor Lore Templates
 
-**Template 1: Historical Discovery**
-"[Flavor name] was discovered in [year] in a [location]. [Unusual circumstance]. Records remain incomplete."
+**Template 1: Limited Edition Release**
+"[Flavor name] was released in [year] as a [season/regional] limited edition. [Brief product description]. The archives suggest supplies were [inventory status]."
 
-**Template 2: Mythological**
-"Legend tells of [flavor name], which could only be bottled during [condition]. The Pepper Keepers deny its existence."
+**Template 2: Discontinued Product**
+"This flavor was available from [year range] before being discontinued. [Details about availability]. Like all ephemeral beverages, it has passed into legend."
 
-**Template 3: Experimental Failure**
-"[Flavor name] was test-marketed in [year] for exactly [short time]. [What went wrong]. No samples survive."
+**Template 3: Regional Exclusive**
+"[Flavor name] was available in [region/market] during [time period]. Distribution was limited to [places]. The Pepper Keepers maintain careful records of its whereabouts."
 
-**Template 4: Interdimensional**
-"This flavor originated in [parallel universe concept]. It remains unstable in our timeline. [Warning]."
+**Template 4: Special Release**
+"[Flavor name] was released [occasion/context]. [Details about release]. This particular vintage remains sought by collectors of the peculiar."
 
 ---
 
