@@ -86,7 +86,7 @@ export default function Home() {
             The Dr Pepper Database
           </h1>
           <p className="text-xl mb-2 opacity-90">
-            Cataloguing 34 real flavors with meticulous attention
+            Cataloging 34 real flavors with meticulous attention
           </p>
           <p className="text-lg opacity-75">Established 1885 • Archived 2025</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
