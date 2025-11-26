@@ -1,4 +1,4 @@
-# Technical PRD: Dr Pepper Database (drpprdb.com)
+# Technical PRD: Dr Pepper Database (drpdb.com)
 
 **Version:** 1.0
 **Last Updated:** 2024-11-24
@@ -69,7 +69,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/drpprdb' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/drpdb' : '',
 }
 
 export default nextConfig
@@ -660,7 +660,7 @@ Not applicable for static site. To "kill" the site:
 
 ## Open Questions
 
-1. **Custom domain:** Should we use drpprdb.com or a subdomain/path?
+1. **Custom domain:** Should we use drpdb.com or a subdomain/path?
 2. **Image style:** Hand-drawn SVG illustrations or AI-generated?
 3. **Future API:** Should we actually build a JSON API for fun?
 4. **Konami code:** Implement "Caffeine Mode" easter egg in Phase 1 or defer?
@@ -668,44 +668,27 @@ Not applicable for static site. To "kill" the site:
 
 ---
 
-## Content: Initial 23 Flavors Requirement
+## Content: 34 Real Dr Pepper Flavors
 
-### Real Flavors (5)
+### Real Flavor Data
 
-| Name | Category | Year |
-|------|----------|------|
-| Dr Pepper Original | Classic | 1885 |
-| Dr Pepper Cherry | Classic | 2009 |
-| Dr Pepper Vanilla Float | Seasonal | 2014 |
-| Dr Pepper Zero Sugar | Classic | 2021 |
-| Dr Pepper Strawberries & Cream | Seasonal | 2023 |
-
-### Fabricated Flavors (18) - Required Examples
-
-| Name | Authenticity | Category |
-|------|--------------|----------|
-| Dr Pepper Midnight Fog | Urban Legend | Forbidden |
-| Dr Pepper Quantum Reserve | Astral Projection | Experimental |
-| Dr Pepper Chili Dog* | Rumored | Experimental |
-| Dr Pepper Decaf+ | Rumored | Classic |
-| (14 more to be created) | Various | Various |
-
-*Note: Dr Pepper Chili Dog may actually exist as a promotional variant; treat as "mythic" regardless.
+The database contains 34 real Dr Pepper flavors with accurate product information and researched historical data. All flavor data is factual and sourced from official releases, limited editions, regional variants, and discontinued products.
 
 ### Lore Writing Guidelines
 
-**Tone:** Unreliable archivist, possibly unhinged historian
+**Tone:** Deadpan archivist with tongue-in-cheek commentary on real products
 
-**Templates:**
-- "First spotted at [impossible location] during [improbable event]..."
-- "The Pepper Keepers deny its existence, which only confirms..."
-- "Bootleg bottlers in [region] claimed to have reverse-engineered..."
-- "Lost to dimensional drift after the [year] Great Carbonation Event..."
+**Guidelines:**
+- Present real products with humorous, archival-style descriptions
+- Reference: bootleg bottlers, lost fountain formulas, dimensional drift, "The Pepper Keepers"
+- Maintain scholarly tone while acknowledging the inherent absurdity of cataloging soda flavors
+- All factual claims must be accurate; humor comes from presentation, not fabrication
 
 **Forbidden lore elements:**
 - Nothing actually harmful or offensive
 - No real trademark violations (don't disparage competitors)
 - No references to real people without obvious parody
+- Never contradict established facts about real products
 
 ---
 

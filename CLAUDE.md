@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dr Pepper Database (drpprdb.com) is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
+Dr Pepper Database (drpdb.com) is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
 
 **Key Philosophy**: Deliver the illusion of extreme scientific rigor for a topic that does not warrant it. Celebrate unnecessary taxonomy. The entire site runs with no backend, no login, and no tracking (aside from maybe a polite "sips remaining" counter that resets on refresh).
 
@@ -67,10 +67,10 @@ Each flavor entry includes:
 - One-sentence lore description (written as if discovered in an unreliable archive)
 - Optional image or illustration
 
-**Initial Content Requirements**:
-- At least 23 flavors minimum (tribute to the 23 ingredients)
-- 5 real flavors, 18 fabricated ones
-- Required fabricated examples: Dr Pepper Midnight Fog, Dr Pepper Quantum Reserve, Dr Pepper Chili Dog (real but treated as mythic), Dr Pepper Decaf+
+**Content**:
+- 34 real Dr Pepper flavors with accurate historical information
+- All flavors are real products with researched data and factual (but witty) lore
+- Maintains the tongue-in-cheek, archival commentary tone while being factually accurate
 
 ### Key Features
 
