@@ -1,4 +1,4 @@
-# Technical PRD: Dr Pepper Database (drpprdb.com)
+# Technical PRD: Dr Pepper Database (drpdb.com)
 
 **Version:** 1.0
 **Last Updated:** 2024-11-24
@@ -69,7 +69,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/drpprdb' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/drpdb' : '',
 }
 
 export default nextConfig
@@ -660,7 +660,7 @@ Not applicable for static site. To "kill" the site:
 
 ## Open Questions
 
-1. **Custom domain:** Should we use drpprdb.com or a subdomain/path?
+1. **Custom domain:** Should we use drpdb.com or a subdomain/path?
 2. **Image style:** Hand-drawn SVG illustrations or AI-generated?
 3. **Future API:** Should we actually build a JSON API for fun?
 4. **Konami code:** Implement "Caffeine Mode" easter egg in Phase 1 or defer?

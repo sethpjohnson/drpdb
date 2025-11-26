@@ -155,12 +155,12 @@ export default function APIDocsPage() {
                 </ol>
                 <div className="mt-4 bg-gray-900 rounded p-4 font-mono text-sm">
                   <div className="text-gray-500 mb-2"># Example Request</div>
-                  <div className="text-green-400">curl https://api.drpprdb.com/v1/flavors</div>
+                  <div className="text-green-400">curl https://api.drpdb.com/v1/flavors</div>
                   <div className="text-gray-500 mt-2"># Returns: 418 I&apos;m a teapot</div>
                 </div>
                 <div className="bg-red-900/20 border border-red-500 rounded p-4 mt-4">
                   <p className="text-sm text-red-200">
-                    <strong>Base URL:</strong> https://api.drpprdb.com/v1/ (Does not resolve)
+                    <strong>Base URL:</strong> https://api.drpdb.com/v1/ (Does not resolve)
                   </p>
                 </div>
               </div>

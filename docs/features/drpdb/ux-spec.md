@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-The Dr Pepper Database (drpprdb.com) is a delightfully over-engineered archive that catalogs 34 real Dr Pepper flavors with deadpan seriousness and tongue-in-cheek commentary. The UX embraces the inherent humor in meticulously documenting soda flavors while maintaining high usability standards and a vintage soda-fountain aesthetic.
+The Dr Pepper Database (drpdb.com) is a delightfully over-engineered archive that catalogs 34 real Dr Pepper flavors with deadpan seriousness and tongue-in-cheek commentary. The UX embraces the inherent humor in meticulously documenting soda flavors while maintaining high usability standards and a vintage soda-fountain aesthetic.
 
 ### 1.1 Design Principles
 
@@ -44,7 +44,7 @@ The Dr Pepper Database (drpprdb.com) is a delightfully over-engineered archive t
 ### 2.1 Site Map
 
 ```
-drpprdb.com/
+drpdb.com/
 ├── Home (Flavor Database)
 ├── Flavor Detail Pages (/flavor/[slug])
 ├── Pepperverse Explorer (/pepperverse)
@@ -844,7 +844,7 @@ Result: Dr Pepper [Merged Name]
 
 "[Description]"
 
-Try it yourself: drpprdb.com/merger
+Try it yourself: drpdb.com/merger
 ```
 
 **Feedback**: Toast notification "Merged flavor copied to clipboard!"
@@ -1012,7 +1012,7 @@ Purely comedic. Documentation for a REST API that doesn't exist, with endpoints 
 │   - Immortal    │ reasonable sense.             │
 │ Rate Limits     │                               │
 │ Error Codes     │ ## Base URL                   │
-│ SDKs (None)     │ `https://api.drpprdb.com/v1/` │
+│ SDKs (None)     │ `https://api.drpdb.com/v1/` │
 │                 │ (Does not resolve)            │
 └─────────────────────────────────────────────────┘
 ```
@@ -1032,7 +1032,7 @@ Purely comedic. Documentation for a REST API that doesn't exist, with endpoints 
 
 ## Example Request
 ```bash
-curl https://api.drpprdb.com/v1/flavors
+curl https://api.drpdb.com/v1/flavors
 # Returns: 418 I'm a teapot
 ```
 ```

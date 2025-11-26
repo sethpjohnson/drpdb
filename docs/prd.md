@@ -1,7 +1,7 @@
 
 # **Product Requirements Document
 
-Dr Pepper Database (drpprdb.com)**
+Dr Pepper Database (drpdb.com)**
 
 ## **1. Overview**
 

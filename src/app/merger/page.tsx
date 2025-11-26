@@ -96,7 +96,7 @@ export default function MergerPage() {
 
   const copyToClipboard = () => {
     if (!result) return
-    const text = `I merged flavors in the Dr Pepper Flavor Merger!\n\nResult: ${result.name}\n\n"${result.description}"\n\nTry it yourself: drpprdb.com/merger`
+    const text = `I merged flavors in the Dr Pepper Flavor Merger!\n\nResult: ${result.name}\n\n"${result.description}"\n\nTry it yourself: drpdb.com/merger`
     navigator.clipboard.writeText(text)
     alert('Merged flavor copied to clipboard!')
   }

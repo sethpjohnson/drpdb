@@ -1,4 +1,4 @@
-# Dr Pepper Database (drpprdb.com)
+# Dr Pepper Database (drpdb.com)
 
 > A delightfully over-engineered database of every Dr Pepper flavor, real and imagined.
 
@@ -82,7 +82,7 @@ The Dr Pepper Database is a lighthearted, static microsite that catalogs every f
 ```bash
 # Clone the repository
 git clone <repo-url>
-cd htp-drpprdb
+cd htp-drpdb
 
 # Install dependencies
 pnpm install
@@ -116,7 +116,7 @@ pnpm lint
 ## Project Structure
 
 ```
-htp-drpprdb/
+htp-drpdb/
 ├── src/
 │   ├── app/                        # Next.js App Router pages
 │   │   ├── layout.tsx              # Root layout with fonts

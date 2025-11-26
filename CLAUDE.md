@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dr Pepper Database (drpprdb.com) is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
+Dr Pepper Database (drpdb.com) is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
 
 **Key Philosophy**: Deliver the illusion of extreme scientific rigor for a topic that does not warrant it. Celebrate unnecessary taxonomy. The entire site runs with no backend, no login, and no tracking (aside from maybe a polite "sips remaining" counter that resets on refresh).
 
