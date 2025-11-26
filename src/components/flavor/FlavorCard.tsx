@@ -22,6 +22,10 @@ export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
     Forbidden: 'bg-red-50 border-red-200',
   }
 
+  // Add basePath prefix for GitHub Pages deployment
+  const basePath = '/drpdb'
+  const fullImageUrl = flavor.imageUrl ? `${basePath}${flavor.imageUrl}` : null
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -38,9 +42,9 @@ export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
         >
           {/* Image Section */}
           <div className="aspect-[3/4] bg-pepper-fizz rounded-md mb-4 flex items-center justify-center border-2 border-dashed border-pepper-burgundy/30 overflow-hidden relative">
-            {flavor.imageUrl && !imageError ? (
+            {fullImageUrl && !imageError ? (
               <Image
-                src={flavor.imageUrl}
+                src={fullImageUrl}
                 alt={`${flavor.name} bottle`}
                 fill
                 className="object-cover"

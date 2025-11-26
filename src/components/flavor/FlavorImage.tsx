@@ -11,13 +11,16 @@ interface FlavorImageProps {
 export default function FlavorImage({ imageUrl, flavorName }: FlavorImageProps) {
   const [imageError, setImageError] = useState(false)
 
-  const showImage = imageUrl && !imageError
+  // Add basePath prefix for GitHub Pages deployment
+  const basePath = '/drpdb'
+  const fullImageUrl = imageUrl ? `${basePath}${imageUrl}` : null
+  const showImage = fullImageUrl && !imageError
 
   return (
     <div className="aspect-[3/4] bg-pepper-fizz rounded-lg flex items-center justify-center border-4 border-dashed border-pepper-burgundy/30 paper-texture sticky top-24 overflow-hidden relative">
       {showImage ? (
         <Image
-          src={imageUrl}
+          src={fullImageUrl}
           alt={`${flavorName} bottle`}
           fill
           className="object-cover"
