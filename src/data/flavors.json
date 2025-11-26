@@ -14,6 +14,7 @@
       "lore": "Flagship flavor created in Waco, Texas in 1885, predating Coca-Cola by one year and refusing to be called a cola ever since.",
       "distribution": "National",
       "caffeineContent": "41mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-original.png",
       "pepperversePosition": { "x": 600, "y": 400, "type": "planet" }
     },
     {
@@ -28,6 +29,7 @@
       "lore": "Modern branding of the original Sugar-Free Dr Pepper diet formula, proving that renaming things is easier than explaining them.",
       "distribution": "National",
       "caffeineContent": "41mg per 12oz",
+      "imageUrl": "/images/flavors/diet-dr-pepper.png",
       "pepperversePosition": { "x": 580, "y": 420, "type": "planet" }
     },
     {
@@ -42,6 +44,7 @@
       "lore": "Launched in 2021 with Original, Cherry and Cream Soda variants, scientifically proving that zero is different from diet.",
       "distribution": "National",
       "caffeineContent": "41mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-zero-sugar.png",
       "pepperversePosition": { "x": 620, "y": 380, "type": "planet" }
     },
     {
@@ -98,6 +101,7 @@
       "lore": "Launched as part of the Dr Pepper Zero Sugar lineup, where cherry gets both a flavor boost and a sugar reduction simultaneously.",
       "distribution": "National",
       "caffeineContent": "39mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-cherry-zero-sugar.png",
       "pepperversePosition": { "x": 670, "y": 340, "type": "planet" }
     },
     {
@@ -126,6 +130,7 @@
       "lore": "Zero sugar version of Dr Pepper & Cream Soda, delivering vanilla dreams without the caloric consequences.",
       "distribution": "National",
       "caffeineContent": "39mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-cream-soda-zero-sugar.png",
       "pepperversePosition": { "x": 720, "y": 340, "type": "planet" }
     },
     {
@@ -140,6 +145,7 @@
       "lore": "Combines cherry and vanilla notes with the original formula, for those who couldn't choose between Cherry and Cream Soda.",
       "distribution": "National",
       "caffeineContent": "39mg per 12oz",
+      "imageUrl": "/images/flavors/cherry-vanilla-dr-pepper.png",
       "pepperversePosition": { "x": 740, "y": 380, "type": "planet" }
     },
     {
@@ -182,6 +188,7 @@
       "lore": "First permanent cream based fruit flavor in the lineup, finally giving strawberries the Dr Pepper treatment they never asked for.",
       "distribution": "National",
       "caffeineContent": "39mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-strawberries-and-cream.png",
       "pepperversePosition": { "x": 780, "y": 360, "type": "planet" }
     },
     {
@@ -196,6 +203,7 @@
       "lore": "Uses zero sugar sweeteners with the same strawberries and cream profile, because even berries deserve a diet option.",
       "distribution": "National",
       "caffeineContent": "39mg per 12oz",
+      "imageUrl": "/images/flavors/dr-pepper-strawberries-and-cream-zero-sugar.png",
       "pepperversePosition": { "x": 800, "y": 340, "type": "planet" }
     },
     {
@@ -254,6 +262,7 @@
       "distribution": "National",
       "discontinued": true,
       "caffeineContent": "41mg per 12oz",
+      "imageUrl": "/images/flavors/dietetic-dr-pepper.png",
       "pepperversePosition": { "x": 400, "y": 480, "type": "black-hole" }
     },
     {
