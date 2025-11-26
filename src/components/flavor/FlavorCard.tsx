@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import { Flavor } from '@/types/flavor'
 import SugarFreeBadge from './SugarFreeBadge'
 import RarityDisplay from './RarityDisplay'
@@ -13,6 +14,7 @@ interface FlavorCardProps {
 }
 
 export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
+  const [imageError, setImageError] = useState(false)
   const categoryColors = {
     Classic: 'bg-blue-50 border-blue-200',
     Seasonal: 'bg-green-50 border-green-200',
@@ -36,13 +38,14 @@ export default function FlavorCard({ flavor, index = 0 }: FlavorCardProps) {
         >
           {/* Image Section */}
           <div className="aspect-[3/4] bg-pepper-fizz rounded-md mb-4 flex items-center justify-center border-2 border-dashed border-pepper-burgundy/30 overflow-hidden relative">
-            {flavor.imageUrl ? (
+            {flavor.imageUrl && !imageError ? (
               <Image
                 src={flavor.imageUrl}
                 alt={`${flavor.name} bottle`}
                 fill
                 className="object-cover"
                 unoptimized
+                onError={() => setImageError(true)}
               />
             ) : (
               <div className="w-16 h-16 bg-pepper-burgundy rounded-full flex items-center justify-center">

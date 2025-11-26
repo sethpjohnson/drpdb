@@ -3,8 +3,8 @@ import SugarFreeBadge from '@/components/flavor/SugarFreeBadge'
 import RarityDisplay from '@/components/flavor/RarityDisplay'
 import FlavorCard from '@/components/flavor/FlavorCard'
 import Link from 'next/link'
-import Image from 'next/image'
 import FlavorNavigation from '@/components/flavor/FlavorNavigation'
+import FlavorImage from '@/components/flavor/FlavorImage'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -67,21 +67,7 @@ export default async function FlavorDetailPage({ params }: PageProps) {
         <div className="grid md:grid-cols-[400px_1fr] gap-8 mb-12">
           {/* Image Column */}
           <div>
-            <div className="aspect-[3/4] bg-pepper-fizz rounded-lg flex items-center justify-center border-4 border-dashed border-pepper-burgundy/30 paper-texture sticky top-24 overflow-hidden relative">
-              {flavor.imageUrl ? (
-                <Image
-                  src={flavor.imageUrl}
-                  alt={`${flavor.name} bottle`}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-              ) : (
-                <div className="w-32 h-32 bg-pepper-burgundy rounded-full flex items-center justify-center">
-                  <span className="text-pepper-cream font-bold text-6xl">Dr</span>
-                </div>
-              )}
-            </div>
+            <FlavorImage imageUrl={flavor.imageUrl} flavorName={flavor.name} />
 
             {/* Navigation */}
             <div className="mt-6">
