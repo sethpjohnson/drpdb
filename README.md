@@ -1,10 +1,12 @@
-# Dr Pepper Database (drpdb.com)
+# Dr Pepper Database
 
-> A delightfully over-engineered database of every Dr Pepper flavor, real and imagined.
+> A delightfully over-engineered database of every Dr Pepper flavor thanks to AI. This project was a one-shot experiment to test a new AI toolchain. PRD was created with OpenAI, code was written with Claude Code and numerous custom agents. Since it originally started as a joke between friends, the first round of flavors were completely fabricated. ChatGPT was used to research the real flavors and add them to the database. Alos there is no database, just a JSON file with the flavors and a few images. 
+> 
+> This was admittedly a silly idea, but it turned into a fun afternoon project to test the current limits of what I can do with AI. 99% of what you see was written by the first prompt. The longest part of the project was finding all of the images to use for the flavors followed by some troubleshooting Github Pages. This part didn't use an agent, only the default Claude Code model but could be improved with better prompts or a custom agent in the future. 
 
 ## Overview
 
-The Dr Pepper Database is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
+The Dr Pepper Database is a lighthearted, static microsite that catalogs 34 real Dr Pepper flavors with researched historical information. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
 
 **Key Philosophy**: Deliver the illusion of extreme scientific rigor for a topic that does not warrant it. Celebrate unnecessary taxonomy.
 
@@ -13,17 +15,21 @@ The Dr Pepper Database is a lighthearted, static microsite that catalogs every f
 ### Core Features
 
 - **Flavor Database** (Home Page)
-  - Browse 24+ Dr Pepper flavors (5 real, 19+ fabricated)
-  - Search by flavor name, lore, or notes
-  - Filter by authenticity level, category, rarity
+  - Browse 34 real Dr Pepper flavors with researched data
+  - Search by flavor name, lore, or flavor notes
+  - Filter by category (Classic, Seasonal, Experimental), status (Current, Discontinued)
+  - Filter counts displayed next to each option
   - "Surprise Me" random flavor selector
   - Responsive grid layout (1/2/3 columns)
 
 - **Flavor Detail Pages**
-  - Comprehensive flavor information
-  - Lore from "The Pepper Keepers Archives"
+  - Comprehensive flavor information with product images
+  - Historical lore with tongue-in-cheek commentary
   - Flavor notes and pairing suggestions
   - Rarity scoring system (1-10)
+  - Sugar-free badge for diet/zero sugar variants
+  - Distribution information (National, Regional, Test Market)
+  - Caffeine content
   - Related flavors carousel
   - Navigation between flavors
 
@@ -75,14 +81,14 @@ The Dr Pepper Database is a lighthearted, static microsite that catalogs every f
 ### Prerequisites
 
 - Node.js 18+
-- pnpm 8+ (DO NOT use npm or yarn)
+- pnpm 10+ (DO NOT use npm or yarn)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd htp-drpdb
+git clone https://github.com/sethpjohnson/drpdb.git
+cd htp-drpprdb
 
 # Install dependencies
 pnpm install
@@ -153,18 +159,18 @@ htp-drpdb/
 interface Flavor {
   id: string                      // kebab-case unique identifier
   name: string                    // Display name
-  authenticity: AuthenticityLevel // Real, Rumored, Urban Legend, Astral Projection
-  category: FlavorCategory        // Classic, Seasonal, Experimental, Forbidden
+  sugar_free: boolean             // Identifies diet/zero sugar variants
+  category: FlavorCategory        // Classic, Seasonal, Experimental
   rarityScore: RarityScore        // 1-10
-  releaseYear: number | string    // Year or range like "1885-1887"
+  releaseYear: number | string    // Year (accurate historical data)
   flavorNotes: string[]           // Array of tasting notes
   pairsWellWith: string[]         // Food/drink pairings
-  lore: string                    // Exactly one sentence
-  imageUrl?: string               // Optional illustration path
-  discontinued?: boolean          // For timeline display
+  lore: string                    // Exactly one sentence of factual (but witty) commentary
+  imageUrl?: string               // Product image path
+  discontinued?: boolean          // Current availability status
   region?: string                 // For regional variants
-  distribution?: string           // National, Regional, Test Market, Mythical
-  caffeineContent?: string        // mg or humorous value
+  distribution?: string           // National, Regional, Test Market
+  caffeineContent?: string        // mg per 12oz
   pepperversePosition?: {         // For Pepperverse visualization
     x: number
     y: number
@@ -187,24 +193,22 @@ interface Flavor {
 - **Display**: Playfair Display (serif, for headings)
 - **Body**: Inter (sans-serif, for text)
 
-### Authenticity Badge Colors
+### Badge Colors
 
-- **Real**: Green (#4CAF50)
-- **Rumored**: Amber (#FFA726)
-- **Urban Legend**: Burgundy (#5C0F1F)
-- **Astral Projection**: Purple gradient (#7B2CBF → #C77DFF)
+- **Sugar Free**: Green (#4CAF50) - Identifies diet and zero sugar variants
+- **Category**: Soft colors matching flavor type (Blue for Classic, Green for Seasonal, Purple for Experimental)
 
 ## Content Guidelines
 
 ### Lore Writing
 
-Each flavor must have exactly one lore sentence that:
-- Reads as if discovered in an unreliable archive
-- May reference: bootleg bottlers, lost fountain formulas, dimensional drift, "The Pepper Keepers"
-- Uses a deadpan, scientific tone for absurd topics
+Each flavor has exactly one lore sentence that:
+- Presents accurate historical information with tongue-in-cheek commentary
+- Maintains a deadpan, archival tone while being factually accurate
+- Highlights interesting or quirky facts about the flavor's history
 
 **Example**:
-> "Only available at diners that no longer exist, between 2:00 and 3:00 AM in time zones that have been discontinued."
+> "Flagship flavor created in Waco, Texas in 1885, predating Coca-Cola by one year and refusing to be called a cola ever since."
 
 ## Performance
 
@@ -226,19 +230,18 @@ Each flavor must have exactly one lore sentence that:
 
 ### GitHub Pages
 
-1. Build the site:
-   ```bash
-   pnpm build
-   ```
+The site is deployed automatically via GitHub Actions to https://sethpjohnson.github.io/drpdb/
 
-2. Deploy the `/out` directory to GitHub Pages:
-   ```bash
-   # Via GitHub Actions (recommended)
-   # See .github/workflows/deploy.yml
-   ```
+**Important Configuration**:
+- `next.config.ts` includes `basePath: '/drpdb'` for subdirectory deployment
+- Image components prepend basePath to all image URLs
+- GitHub Actions uses pnpm v10 and latest artifact upload actions
 
-3. Configure custom domain (optional):
-   - Add CNAME file to /public
+**Workflow**:
+1. Push to main branch triggers deployment
+2. GitHub Actions runs lint and build
+3. Uploads `/out` directory as artifact
+4. Deploys to GitHub Pages
 
 ### Other Static Hosts
 

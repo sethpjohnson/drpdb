@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dr Pepper Database (drpdb.com) is a lighthearted, static microsite that catalogs every flavor of Dr Pepper ever imagined—both real and completely fabricated. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
+Dr Pepper Database is a lighthearted, static microsite that catalogs 34 real Dr Pepper flavors with researched historical information. The product is intentionally simple, funny, and delightfully over-engineered for what is essentially a list of sodas.
 
-**Key Philosophy**: Deliver the illusion of extreme scientific rigor for a topic that does not warrant it. Celebrate unnecessary taxonomy. The entire site runs with no backend, no login, and no tracking (aside from maybe a polite "sips remaining" counter that resets on refresh).
+**Key Philosophy**: Deliver the illusion of extreme scientific rigor for a topic that does not warrant it. Celebrate unnecessary taxonomy. The entire site runs with no backend, no login, and no tracking. All data is stored in a single JSON file with accompanying product images.
 
 ## Tech Stack Requirements
 
@@ -49,34 +49,42 @@ pnpm test
 ## Architecture
 
 ### Static Site Structure
-- Deploys to GitHub Pages or equivalent static host
+- Deploys to GitHub Pages at https://sethpjohnson.github.io/drpdb/
 - No backend services, no API, no database engine
 - All data stored as JSON files (primarily `flavors.json`)
 - Next.js configured for static export (`output: 'export'`)
+- **Important**: Uses `basePath: '/drpdb'` in next.config.ts for GitHub Pages subdirectory deployment
+- Images must be prefixed with basePath in components for proper loading on GitHub Pages
 
 ### Data Structure
 
 **Flavor Database** (`flavors.json`):
 Each flavor entry includes:
 - Flavor Name
-- Authenticity Level (Real, Rumored, Urban Legend, Astral Projection)
+- Sugar Free (boolean - identifies diet/zero sugar variants)
+- Category (Classic, Seasonal, Experimental)
 - Flavor Notes
-- Release Year (real or fabricated)
+- Release Year (accurate historical data)
 - Rarity Score
 - "Pairs Well With" field
-- One-sentence lore description (written as if discovered in an unreliable archive)
-- Optional image or illustration
+- One-sentence lore description (factual but written with tongue-in-cheek commentary)
+- Distribution (National, Regional, Test Market)
+- Caffeine Content
+- Image URL (path to product image)
+- Pepperverse Position (coordinates for cosmological visualization)
 
 **Content**:
 - 34 real Dr Pepper flavors with accurate historical information
 - All flavors are real products with researched data and factual (but witty) lore
+- 14 flavors marked as sugar_free (Diet Dr Pepper, Zero Sugar variants, etc.)
 - Maintains the tongue-in-cheek, archival commentary tone while being factually accurate
 
 ### Key Features
 
 1. **Flavor Database**: Browsable catalog with search and filters
-   - Keyword search across flavor names
-   - Filters: Authenticity Level, Rarity Score, Flavor Category (Classic, Seasonal, Experimental, Forbidden), Release Year
+   - Keyword search across flavor names, lore, and flavor notes
+   - Filters: Category (Classic, Seasonal, Experimental), Status (Currently Available, Discontinued)
+   - Filter counts displayed next to each option
    - "Surprise Me" button for random entry
 
 2. **Pepperverse Explorer**: Interactive cosmological flavor map
@@ -109,14 +117,17 @@ Each flavor must have exactly one lore sentence that:
 - No heavy frameworks unless used ironically
 
 ## Deployment
-- GitHub Actions validates JSON structure
-- Build and push to gh-pages on merge
-- No external dependencies
+- GitHub Actions workflow in `.github/workflows/deploy.yml`
+- Uses pnpm v10 (lockfileVersion 9.0)
+- Uses `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`
+- Builds static site and deploys to GitHub Pages
+- **Critical**: basePath configuration required for subdirectory deployment
+- No external dependencies or backend services
 
 ## Non-Goals
 - Real-time data
 - User uploads
 - User accounts or profiles
-- Practical usefulness
-- Accuracy
-- Seriousness
+- Backend services or databases
+- Practical usefulness beyond entertainment
+- Taking itself seriously
